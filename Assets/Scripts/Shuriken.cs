@@ -6,7 +6,6 @@ public class Shuriken : MonoBehaviour
 {
     private float velocity = 2;
     private Rigidbody2D rb2D;
-    public AudioSource audioSource;
     public Sprite[] availableSprites;
     void Start() 
     {
@@ -30,7 +29,8 @@ public class Shuriken : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         FindAnyObjectByType<GameManager>().GameOver();
-        audioSource.Play();
+        // Reproducir sonido de Game Over usando Wwise - Esto es más eficiente y profesional que usar el sistema de audio de Unity, y nos permite tener un control más granular sobre el audio
+        AkSoundEngine.PostEvent("GameOver", gameObject);
     }
 }
 
