@@ -28,12 +28,12 @@ public class AudioMute : MonoBehaviour
         // Cambiar el estado de la música en Wwise y actualizar el sprite del botón - Usamos estados de Wwise para controlar la música, lo que es más eficiente, profesional y limpio
         if (muted) 
         {
-            AkSoundEngine.SetState("MusicState", "MusicOff");
+            AkSoundEngine.SetState("Music", "Mute");
             buttonImage.sprite = musicOffSprite;
         }
         else
         {
-            AkSoundEngine.SetState("MusicState", "MusicOn");
+            AkSoundEngine.SetState("Music", "Play");
             buttonImage.sprite = musicOnSprite;
         }
     }

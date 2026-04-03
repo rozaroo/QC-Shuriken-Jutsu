@@ -3,8 +3,6 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     public static MusicPlayer Instance;
-    public AudioSource audioSource;
-
     void Awake()
     {
         if (Instance == null)
@@ -12,11 +10,17 @@ public class MusicPlayer : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
     void Start()
     {
-        audioSource.volume = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
+        uint bankID;
+        AkSoundEngine.LoadBank("Main", out bankID);
+        AkSoundEngine.PostEvent("Play_Music", gameObject);
     }
 }
 
