@@ -116,6 +116,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c6a85d875dba1c74d9268e7107a110c8, type: 3}
   - {fileID: 21300000, guid: ea02e2a0cb5f4e04ea661e1fa8df1f79, type: 3}
   - {fileID: 21300000, guid: a7f59317da408ec4c832b86149da9401, type: 3}
+  touchAction: {fileID: -7926193636060767127, guid: 3607d64eba7be6147b1805ab79086ef5, type: 3}
 --- !u!114 &-8344318616679890281
 MonoBehaviour:
   m_ObjectHideFlags: 0

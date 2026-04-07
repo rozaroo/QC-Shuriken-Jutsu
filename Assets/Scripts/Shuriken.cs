@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shuriken : MonoBehaviour
 {
     private float velocity = 2;
     private Rigidbody2D rb2D;
     public Sprite[] availableSprites;
+    public InputActionReference touchAction;
+
+    void OnEnable()
+    {
+        touchAction.action.Enable();
+        touchAction.action.performed += OnTouch;
+    }
+    void OnDisable()
+    {
+        touchAction.action.performed -= OnTouch;
+        touchAction.action.Disable();
+    }
     void Start() 
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -18,14 +31,11 @@ public class Shuriken : MonoBehaviour
             if (index >= 0 && index < availableSprites.Length) sr.sprite = availableSprites[index];
         }
     }
-    void Update() 
+    private void OnTouch(InputAction.CallbackContext context)
     {
-        if (Input.touchCount > 0) 
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began) rb2D.linearVelocity = Vector2.up * velocity;
-        }
+        if (context.phase == InputActionPhase.Performed) rb2D.linearVelocity = Vector2.up * velocity;
     }
+    
     private void OnCollisionEnter2D(Collision2D collision) 
     {
         FindAnyObjectByType<GameManager>().GameOver();

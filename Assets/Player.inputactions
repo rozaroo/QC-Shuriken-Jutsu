@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "Player",
+    "maps": [
+        {
+            "name": "Interact",
+            "id": "dfe81db0-17a7-431f-8f9a-cb27729f4543",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "Button",
+                    "id": "dd4280c5-44a7-4fa8-9734-9a93c5e916f8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1d8b1bf2-f9d3-4373-beb3-efbf93fca590",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
