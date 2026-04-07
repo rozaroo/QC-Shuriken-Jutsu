@@ -8,6 +8,13 @@
   "CacheRoot": "../../../../../../WwiseProjects/ShurikenGameAudio/.cache",
   "Platforms": [
    {
+    "Name": "Android",
+    "GUID": "{204A5A0F-910D-481D-AD6D-CB89763F83CA}",
+    "BasePlatform": "Android",
+    "BasePlatformGUID": "{A2D401DE-B8B6-4FEB-8142-137C34D507CA}",
+    "Path": "../../../../../../WwiseProjects/ShurikenGameAudio/GeneratedSoundBanks/Android"
+   },
+   {
     "Name": "Windows",
     "GUID": "{B26BC945-C427-4189-B87D-810D38288E15}",
     "BasePlatform": "Windows",
@@ -24,6 +31,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{6706C3FE-AD7B-ACDA-12C9-D1F18D4D4ECE}"
+  "FileHash": "{7DC3DAD9-29FA-B97D-D005-3FA8BA56F545}"
  }
 }
