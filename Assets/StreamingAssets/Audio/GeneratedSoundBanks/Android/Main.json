@@ -1,0 +1,75 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{BB7C207C-BF7D-45E3-98E5-31BF8B89D7C6}",
+    "Language": "SFX",
+    "Hash": "{29C622BE-3B23-AF8F-BD16-E627FE6B4830}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "288350706",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "YEAT-VVV-x-Hollow-Purple-INSTRUMENTAL-EPIC-VERSION.wav",
+      "CachePath": "3B/{3BC7EDB1-AAC9-EF16-7867-4DECA6E18C78}.wem"
+     },
+     {
+      "Id": "915171635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Death-Sound-Effect.wav",
+      "CachePath": "9C/{9CFFFAE7-30A5-3601-F868-6D7F6D329DD2}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4158285989",
+      "Name": "GameOver",
+      "ObjectPath": "\\Events\\Default Work Unit\\GameOver",
+      "GUID": "{15C082E4-CED1-4071-B861-2D0EBEB720BE}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.4341043",
+      "DurationMax": "0.4341043",
+      "MediaRefs": [
+       {
+        "Id": "915171635"
+       }
+      ]
+     },
+     {
+      "Id": "2932040671",
+      "Name": "Play_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Music",
+      "GUID": "{7834779B-2053-424E-9321-F1FE993636A7}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "288350706"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "MusicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVolume",
+      "GUID": "{2D4092EB-B378-4A34-BEAE-3CB4A0DD4E2A}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{455E7130-05CF-C545-DA6F-AD12944A194F}"
+ }
+}
