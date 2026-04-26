@@ -128,7 +128,7 @@ MonoBehaviour:
     m_MaximumHardwareTimeoutMs: 1000
     m_DebugOutOfRangeCheckEnabled: 0
     m_DebugOutOfRangeLimit: 16
-    m_SuspendAudioDuringFocusLoss: 1
+    m_SuspendAudioDuringFocusLoss: 0
     m_RenderDuringFocusLoss: 0
     m_SoundBankPersistentDataPath: 
     m_UseSubFoldersForGeneratedFiles: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
     m_MemoryMediaAllocSizeHuge: 2097152
     m_MemoryDebugLevel: 0
     m_AudioAPI: 3
-    m_SpatializerAPI: 256
+    m_SpatializerAPI: -1
     m_AudioPath: 1
     m_VerboseSink: 0
   CommsSettings:

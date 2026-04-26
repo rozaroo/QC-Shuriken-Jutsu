@@ -20,6 +20,7 @@ public class MusicPlayer : MonoBehaviour
     {
         uint bankID;
         AkSoundEngine.LoadBank("Main", out bankID);
+        AkSoundEngine.SetRTPCValue("MusicVolume", 50f);
         AkSoundEngine.PostEvent("Play_Music", gameObject);
     }
 }
