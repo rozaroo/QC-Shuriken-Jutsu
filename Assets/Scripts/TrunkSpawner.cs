@@ -27,7 +27,7 @@ public class TrunkSpawner : MonoBehaviour
         Vector3 spawnPosition = transform.position + new Vector3(0, Random.Range(-heightRange,heightRange));
         GameObject newTrunk;
         newTrunk = Instantiate(trunkPrefab, spawnPosition, Quaternion.identity);
-        Destroy(newTrunk, 15f);
+        Destroy(newTrunk, 10f);
     }
 
 

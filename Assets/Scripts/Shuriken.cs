@@ -3,11 +3,15 @@ using UnityEngine.InputSystem;
 
 public class Shuriken : MonoBehaviour
 {
-    private float velocity = 2;
+    private float velocity = 3;
     private Rigidbody2D rb2D;
     public Sprite[] availableSprites;
     public InputActionReference touchAction;
 
+    public CircleCollider2D circleCollider;
+
+    // Radios para cada shuriken
+    private float[] colliderSizes = { 0.6f, 0.5f, 0.77f };
     void OnEnable()
     {
         touchAction.action.Enable();
@@ -26,7 +30,10 @@ public class Shuriken : MonoBehaviour
         {
             int index = ShurikenData.Instance.selectedShurikenIndex;
             SpriteRenderer sr = spriteChild.GetComponent<SpriteRenderer>();
-            if (index >= 0 && index < availableSprites.Length) sr.sprite = availableSprites[index];
+            if (index >= 0 && index < availableSprites.Length) {
+                sr.sprite = availableSprites[index];
+                circleCollider.radius = colliderSizes[index];
+            }
         }
     }
     private void OnTouch(InputAction.CallbackContext context)

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -21,7 +22,19 @@ public class MainMenuManager : MonoBehaviour
     public static MainMenuManager Instance { get; private set; }
     public string userId;
     public GameObject timerDataPrefab;
+    public InputActionReference exitAction;
 
+
+    void OnEnable()
+    {
+        exitAction.action.Enable();
+        exitAction.action.performed += OnExitPerformed;
+    }
+    void OnDisable()
+    {
+        exitAction.action.performed -= OnExitPerformed;
+        exitAction.action.Disable();
+    }
     private void Awake()
     {
         //if (Instance == null)
@@ -53,13 +66,13 @@ public class MainMenuManager : MonoBehaviour
         if (PersistantTimerData.Instance != null)
         {
             PersistantTimerData.Instance.UploadData();
-            StartCoroutine(QuitAfterDelay(0.5f));
-        }
-        else
-        {
-            Debug.LogWarning("PersistantTimerData no encontrado al salir.");
             Application.Quit();
-        } 
+        }
+        else Application.Quit();
+    }
+    private void OnExitPerformed(InputAction.CallbackContext context)
+    {
+        QuitGame();
     }
     public void Play()
     {
