@@ -18,5 +18,9 @@ public class MusicPlayer : MonoBehaviour
     {
         audioSource.volume = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
     }
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        AudioListener.pause = pauseStatus;
+    }
 }
 

@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4090160904420271690}
-  - component: {fileID: 147603962939486760}
   - component: {fileID: 1390892660337221332}
   - component: {fileID: 4457574206361074302}
   - component: {fileID: 7107192333000154363}
+  - component: {fileID: 2469423875577739599}
+  - component: {fileID: 6161333002925902630}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36,44 +37,9 @@ Transform:
   - {fileID: 2155454288027376707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &147603962939486760
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275260213087281637}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.2, y: 1.2}
-  m_Direction: 0
 --- !u!50 &1390892660337221332
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -84,8 +50,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 0.7
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -115,6 +81,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c6a85d875dba1c74d9268e7107a110c8, type: 3}
   - {fileID: 21300000, guid: ea02e2a0cb5f4e04ea661e1fa8df1f79, type: 3}
   - {fileID: 21300000, guid: a7f59317da408ec4c832b86149da9401, type: 3}
+  polygonCollider: {fileID: 2469423875577739599}
+  shurikenColliderData: {fileID: 11400000, guid: 88d62555c48c21a4e9eae3d95efff9c7, type: 2}
 --- !u!82 &7107192333000154363
 AudioSource:
   m_ObjectHideFlags: 0
@@ -125,7 +93,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1cea8b7b4d32ef942b551cf84de5cbfe, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 1cea8b7b4d32ef942b551cf84de5cbfe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 1
@@ -211,6 +180,83 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &2469423875577739599
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275260213087281637}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.09608317, y: 0.23287511}
+      - {x: -0.2175448, y: 0.55885804}
+      - {x: -0.23058909, y: 0.5583892}
+      - {x: -0.2329713, y: 0.103060484}
+      - {x: -0.5581214, y: -0.21071514}
+      - {x: -0.54097116, y: -0.2251702}
+      - {x: -0.10562253, y: -0.22365674}
+      - {x: 0.1566823, y: -0.49926317}
+      - {x: 0.21143612, y: -0.5574891}
+      - {x: 0.22393389, y: -0.5513723}
+      - {x: 0.22571614, y: -0.10100791}
+      - {x: 0.29846656, y: -0.032307804}
+      - {x: 0.4350542, y: 0.092573464}
+      - {x: 0.4537388, y: 0.111581385}
+      - {x: 0.55946565, y: 0.21269745}
+      - {x: 0.5476611, y: 0.22924346}
+  m_UseDelaunayMesh: 0
+--- !u!114 &6161333002925902630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275260213087281637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513e3c1dce6244443b0ae16283b8b08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 360
+  rb: {fileID: 1390892660337221332}
 --- !u!1 &2934142141777735256
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +267,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2155454288027376707}
   - component: {fileID: 6229257722232580316}
-  - component: {fileID: 2631179302965512117}
   m_Layer: 0
   m_Name: ShurikenSprite
   m_TagString: Untagged
@@ -261,6 +306,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -296,15 +344,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2631179302965512117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934142141777735256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513e3c1dce6244443b0ae16283b8b08f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
