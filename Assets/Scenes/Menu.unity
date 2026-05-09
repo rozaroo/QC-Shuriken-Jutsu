@@ -2775,8 +2775,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1992294178}
   - component: {fileID: 1992294179}
-  - component: {fileID: 1992294181}
-  - component: {fileID: 1992294180}
   - component: {fileID: 1992294183}
   m_Layer: 0
   m_Name: Audio
@@ -2810,30 +2808,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15adb946de31d7241a7aabf2163cd580, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1992294180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992294176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c498a1d5a78efb48b78e824b4c3215d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1992294181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992294176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100a5a2b7747555478f1ca61b9b10a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &1992294183

@@ -7,11 +7,9 @@ public class Shuriken : MonoBehaviour
     private Rigidbody2D rb2D;
     public Sprite[] availableSprites;
     public InputActionReference touchAction;
+    public PolygonCollider2D polygonCollider;
+    public ShurikenDataPrefab shurikenColliderData;
 
-    public CircleCollider2D circleCollider;
-
-    // Radios para cada shuriken
-    private float[] colliderSizes = { 0.6f, 0.5f, 0.77f };
     void OnEnable()
     {
         touchAction.action.Enable();
@@ -32,7 +30,19 @@ public class Shuriken : MonoBehaviour
             SpriteRenderer sr = spriteChild.GetComponent<SpriteRenderer>();
             if (index >= 0 && index < availableSprites.Length) {
                 sr.sprite = availableSprites[index];
-                circleCollider.radius = colliderSizes[index];
+                // Cambiar forma del Polygon Collider
+                switch (index)
+                {
+                    case 0:
+                        polygonCollider.SetPath(0, shurikenColliderData.colliderPointsSpriteOne);
+                        break;
+                    case 1:
+                        polygonCollider.SetPath(0, shurikenColliderData.colliderPointsSpriteTwo);
+                        break;
+                    case 2:
+                        polygonCollider.SetPath(0, shurikenColliderData.colliderPointsSpriteThree);
+                        break;
+                }
             }
         }
     }
@@ -43,9 +53,12 @@ public class Shuriken : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        FindAnyObjectByType<GameManager>().GameOver();
-        // Reproducir sonido de Game Over usando Wwise - Esto es más eficiente y profesional que usar el sistema de audio de Unity, y nos permite tener un control más granular sobre el audio
-        AkSoundEngine.PostEvent("GameOver", gameObject);
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Trunk"))
+        {
+            FindAnyObjectByType<GameManager>().GameOver();
+            // Reproducir sonido de Game Over usando Wwise - Esto es más eficiente y profesional que usar el sistema de audio de Unity, y nos permite tener un control más granular sobre el audio
+            AkSoundEngine.PostEvent("GameOver", gameObject);
+        }
     }
 }
 

@@ -23,5 +23,15 @@ public class MusicPlayer : MonoBehaviour
         AkSoundEngine.SetRTPCValue("MusicVolume", 50f);
         AkSoundEngine.PostEvent("Play_Music", gameObject);
     }
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus) AkSoundEngine.Suspend();
+        else AkSoundEngine.WakeupFromSuspend();
+    }
+    //private void OnApplicationPause(bool pauseStatus)
+    //{
+    //    if (pauseStatus) AkSoundEngine.Suspend();
+    //    else AkSoundEngine.WakeupFromSuspend();
+    //}
 }
 
