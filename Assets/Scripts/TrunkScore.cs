@@ -6,7 +6,11 @@ public class TrunkScore : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if (collision.CompareTag("Player")) FindAnyObjectByType<Score>().UpdateScore(); 
+        if (collision.CompareTag("Player")) 
+        {
+            FindAnyObjectByType<Score>().UpdateScore();
+            GetComponent<Collider2D>().enabled = false;
+        }
     }
 
 }
