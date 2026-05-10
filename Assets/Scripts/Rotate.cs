@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    void Update()
+    private float rotationSpeed = 360f;
+    public Rigidbody2D rb;
+    void FixedUpdate()
     {
-        transform.Rotate(0,0,360f * Time.deltaTime);
+        rb.MoveRotation(rb.rotation + rotationSpeed * Time.fixedDeltaTime);
     }
 }
