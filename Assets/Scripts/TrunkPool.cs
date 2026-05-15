@@ -66,6 +66,8 @@ public class TrunkPool : MonoBehaviour
         Vector3 spawnPosition = transform.position + new Vector3(0, Random.Range(-heightRange, heightRange));
         trunk.transform.position = spawnPosition;
         trunk.transform.rotation = Quaternion.identity;
+        TrunkGap gapScript = trunk.GetComponent<TrunkGap>();
+        gapScript.RandomizeGap();
         trunk.SetActive(true);
     }
 
