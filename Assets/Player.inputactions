@@ -50,6 +50,28 @@
                 },
                 {
                     "name": "",
+                    "id": "b7f1c652-a1e9-4fa2-ac7b-469cda489ca3",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6cd5e64-8635-40fe-a780-9dc9558c47b0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7ae63fab-17f3-44c3-98aa-2e24d37df601",
                     "path": "<Keyboard>/escape",
                     "interactions": "",

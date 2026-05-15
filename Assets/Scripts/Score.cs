@@ -16,11 +16,6 @@ public class Score : MonoBehaviour
         bestScoreText.text = PlayerPrefs.GetInt("BestScore",0).ToString();
         
     }
-    void Update()
-    {
-        if (scoreText == null) Debug.Log("Null");
-        if (bestScoreText == null) Debug.Log("Null");
-    }
     public void UpdateBestScore() 
     {
         int bestScore = PlayerPrefs.GetInt("BestScore", 0);
@@ -28,7 +23,7 @@ public class Score : MonoBehaviour
         {
             PlayerPrefs.SetInt("BestScore",score);
             bestScoreText.text = score.ToString();
-            cloudSave.SaveNewScore(score);
+            //cloudSave.SaveNewScore(score);
             
         }
     }

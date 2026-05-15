@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gameoverCanvas;
     public Score score;
-    public TMP_InputField playerNameInput;
     public GameObject playerPrefab;
     public Sprite[] shurikenSprites;
     public Transform SpawnPoint;
@@ -31,18 +30,14 @@ public class GameManager : MonoBehaviour
     {
         gameoverCanvas.SetActive(true);
         Time.timeScale = 0;
-        string playerName = playerNameInput.text;
         int currentScore = score.GetCurrentScore();
-        await CloudSaveSystem.Instance.AddNewScore(playerName, currentScore);
     }
     public void Restart() 
     {
-        score.EndGame();
         SceneManager.LoadScene(1);
     }
     public void MainMenu() 
     {
-        score.EndGame();
         SceneManager.LoadScene(0);
     }
 }

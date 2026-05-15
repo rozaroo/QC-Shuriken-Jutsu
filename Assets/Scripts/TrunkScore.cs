@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class TrunkScore : MonoBehaviour
 {
+    private Collider2D col;
+
+    void Awake()
+    {
+        col = GetComponent<Collider2D>();
+    }
+
+    private void OnEnable()
+    {
+        col.enabled = true;
+    }
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.CompareTag("Player"))
         {
             FindAnyObjectByType<Score>().UpdateScore();
-            GetComponent<Collider2D>().enabled = false;
+            col.enabled = false;
         }
     }
 }

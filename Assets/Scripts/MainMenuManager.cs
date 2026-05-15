@@ -9,7 +9,6 @@ using UnityEngine.InputSystem;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public Score scoreManager;
     public GameObject slider;
     public GameObject ShurikenSelector;
     public GameObject BackButton;
