@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FloorMove : MonoBehaviour
 {
-    private float speed = 1.25f;
+    private float speed;
+    public SpeedEnviroment speedEnviroment;
     private float width = 6;
     public SpriteRenderer SpriteRenderer;
     private Vector2 startSize;
@@ -12,6 +13,7 @@ public class FloorMove : MonoBehaviour
     void Start() 
     {
         startSize = new Vector2(SpriteRenderer.size.x, SpriteRenderer.size.y);
+        speed = speedEnviroment.Speed[0];
     }
     void Update() 
     {

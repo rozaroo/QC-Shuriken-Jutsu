@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Trunk : MonoBehaviour
 {
-    private float speed = 0.75f;
+    public TrunkPool trunkpool;
+    
     void Update() 
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * trunkpool.speed * Time.deltaTime;
     }
 }
 

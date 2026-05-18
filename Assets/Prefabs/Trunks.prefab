@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8306575493625288944}
   - component: {fileID: -3994844608035138302}
   - component: {fileID: 3577489855993437847}
+  - component: {fileID: 2592540609728785493}
+  - component: {fileID: 4315091681950874478}
   m_Layer: 0
   m_Name: Trunks
   m_TagString: Untagged
@@ -48,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe535f112813e554ca908b4f36112f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trunkpool: {fileID: 0}
 --- !u!61 &-3994844608035138302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106,6 +109,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8300319925e25c94fa375921de552b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2592540609728785493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512891608058883074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840dc211392e4be4cab14af8d722302a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4315091681950874478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512891608058883074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b5e9718ce6f2047993e927ec5f4b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topTrunk: {fileID: 7887075567014401974}
+  bottomTrunk: {fileID: 5474864067378116417}
 --- !u!1 &3522711193476026597
 GameObject:
   m_ObjectHideFlags: 0
