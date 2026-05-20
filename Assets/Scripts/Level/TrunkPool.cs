@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrunkPool : MonoBehaviour
+public class TrunkPool : MonoBehaviour, ICustomUpdate
 {
     public GameObject trunkPrefab;
     public int poolSize = 10;
@@ -24,7 +24,7 @@ public class TrunkPool : MonoBehaviour
         SpawnTrunk();
     }
 
-    void Update()
+    public void OnCustomUpdate()
     {
         int currentScore = score.GetCurrentScore(); 
         if (currentScore >= lastScoreThreshold + 10) 
@@ -39,6 +39,15 @@ public class TrunkPool : MonoBehaviour
             timer = 0;
             SetRandomSpawnTime();
         }
+    }
+    void OnEnable()
+    {
+        CustomUpdateManager.Register(this);
+    }
+
+    void OnDisable()
+    {
+        CustomUpdateManager.Unregister(this);
     }
     void SetRandomSpawnTime()
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FloorManager : MonoBehaviour
+public class FloorManager : MonoBehaviour, ICustomUpdate
 {
     public Transform[] floors; // arrastrás los 3 pisos acá
     //public float speed = 1.25f;
@@ -16,7 +16,7 @@ public class FloorManager : MonoBehaviour
         speed = speedEnviroment.Speed[0];
     }
 
-    void Update()
+    public void OnCustomUpdate()
     {
         float leftEdge = Camera.main.transform.position.x - (Camera.main.orthographicSize * Camera.main.aspect);
         foreach (Transform floor in floors)
@@ -34,6 +34,15 @@ public class FloorManager : MonoBehaviour
             speed *= 1.5f;
             lastScoreThreshold = currentScore;
         }
+    }
+    void OnEnable()
+    {
+        CustomUpdateManager.Register(this);
+    }
+
+    void OnDisable()
+    {
+        CustomUpdateManager.Unregister(this);
     }
 
     Transform GetRightMostFloor()
