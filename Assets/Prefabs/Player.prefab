@@ -83,6 +83,10 @@ MonoBehaviour:
   muteJumpAction: {fileID: -141573939322947052, guid: 3607d64eba7be6147b1805ab79086ef5, type: 3}
   polygonCollider: {fileID: 1640858728034831614}
   shurikenColliderData: {fileID: 11400000, guid: 88d62555c48c21a4e9eae3d95efff9c7, type: 2}
+  jumpEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e77c38c446b89f64ca4aeb8461bcafa7, type: 2}
 --- !u!60 &1640858728034831614
 PolygonCollider2D:
   m_ObjectHideFlags: 0
