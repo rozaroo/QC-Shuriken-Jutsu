@@ -7,18 +7,24 @@ public class Shuriken : MonoBehaviour
     private Rigidbody2D rb2D;
     public Sprite[] availableSprites;
     public InputActionReference touchAction;
+    public InputActionReference muteJumpAction;
     public PolygonCollider2D polygonCollider;
     public ShurikenDataPrefab shurikenColliderData;
+    private bool jumpMuted;
 
     void OnEnable()
     {
         touchAction.action.Enable();
         touchAction.action.performed += OnTouch;
+        muteJumpAction.action.Enable();
+        muteJumpAction.action.performed += OnMuteJump;
     }
     void OnDisable()
     {
         touchAction.action.performed -= OnTouch;
         touchAction.action.Disable();
+        muteJumpAction.action.performed -= OnMuteJump;
+        muteJumpAction.action.Disable();
     }
     void Start() 
     {
@@ -48,7 +54,11 @@ public class Shuriken : MonoBehaviour
     }
     private void OnTouch(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed) rb2D.linearVelocity = Vector2.up * velocity;
+        if (context.phase == InputActionPhase.Performed)
+        {
+            rb2D.linearVelocity = Vector2.up * velocity;
+            AkSoundEngine.PostEvent("Play_Jump", gameObject);
+        }
     }
     
     private void OnCollisionEnter2D(Collision2D collision) 
@@ -59,6 +69,12 @@ public class Shuriken : MonoBehaviour
             // Reproducir sonido de Game Over usando Wwise - Esto es más eficiente y profesional que usar el sistema de audio de Unity, y nos permite tener un control más granular sobre el audio
             AkSoundEngine.PostEvent("GameOver", gameObject);
         }
+    }
+    private void OnMuteJump(InputAction.CallbackContext context)
+    {
+        jumpMuted = !jumpMuted;
+        if (jumpMuted) AkSoundEngine.SetState("Jump", "JumpOff");
+        else AkSoundEngine.SetState("Jump", "JumpOn");
     }
 }
 

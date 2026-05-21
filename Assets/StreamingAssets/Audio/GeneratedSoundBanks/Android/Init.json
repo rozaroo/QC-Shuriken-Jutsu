@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{52FC514C-A242-F2D3-0D79-FA219ED38DEA}",
+    "Hash": "{D2DEE524-37A1-353F-AFF2-02C6096D511B}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -111,6 +111,32 @@
      }
     ],
     "StateGroups": [
+     {
+      "Id": "3833651337",
+      "Name": "Jump",
+      "ObjectPath": "\\States\\Default Work Unit\\Jump",
+      "GUID": "{AF986BCB-70E8-4FB9-89DB-5101CF01B690}",
+      "States": [
+       {
+        "Id": "202775352",
+        "Name": "JumpOff",
+        "ObjectPath": "\\States\\Default Work Unit\\Jump\\JumpOff",
+        "GUID": "{083FBB38-78EF-4259-BBD8-B34691CB7700}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Jump\\None",
+        "GUID": "{27A4420D-8B6B-41A7-82B5-8317747C603F}"
+       },
+       {
+        "Id": "1408207330",
+        "Name": "JumpOn",
+        "ObjectPath": "\\States\\Default Work Unit\\Jump\\JumpOn",
+        "GUID": "{98312335-26E0-4DF3-B67B-F966A8BE97CB}"
+       }
+      ]
+     },
      {
       "Id": "3991942870",
       "Name": "Music",
@@ -617,6 +643,6 @@
     ]
    }
   ],
-  "FileHash": "{6210FBEA-96D3-6AD5-4B2E-8D153D99C999}"
+  "FileHash": "{8CA04CC1-E599-E263-5368-6F7403B5394C}"
  }
 }

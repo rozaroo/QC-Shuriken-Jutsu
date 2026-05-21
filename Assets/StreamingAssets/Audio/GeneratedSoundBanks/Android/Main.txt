@@ -1,11 +1,16 @@
 Event	ID	Name			Wwise Object Path	Notes
 	2932040671	Play_Music			\Default Work Unit\Play_Music	
+	3689126666	Play_Jump			\Default Work Unit\Play_Jump	
 	4158285989	GameOver			\Default Work Unit\GameOver	
 
 State Group	ID	Name			Wwise Object Path	Notes
+	3833651337	Jump			\Default Work Unit\Jump	
 	3991942870	Music			\Default Work Unit\Music	
 
 State	ID	Name	State Group			Notes
+	202775352	JumpOff	Jump			
+	748895195	None	Jump			
+	1408207330	JumpOn	Jump			
 	748895195	None	Music			
 	1256202815	Play	Music			
 	2974103762	Mute	Music			
@@ -14,6 +19,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2346531308	MusicVolume			\Default Work Unit\MusicVolume	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	184518363	Jump	.cache\35\{3538C967-BE6F-3444-F28C-087746518710}.wem		\Containers\Default Work Unit\Jump		64608
 	288350706	YEAT-VVV-x-Hollow-Purple-INSTRUMENTAL-EPIC-VERSION	.cache\3B\{3BC7EDB1-AAC9-EF16-7867-4DECA6E18C78}.wem		\Containers\Default Work Unit\YEAT-VVV-x-Hollow-Purple-INSTRUMENTAL-EPIC-VERSION		41995656
 	915171635	Death-Sound-Effect	.cache\9C\{9CFFFAE7-30A5-3601-F868-6D7F6D329DD2}.wem		\Containers\Default Work Unit\Death-Sound-Effect		76672
 
