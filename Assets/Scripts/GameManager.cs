@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gameoverCanvas;
     public Score score;
-    public TMP_InputField playerNameInput;
     public GameObject playerPrefab;
     public Sprite[] shurikenSprites;
     public Transform SpawnPoint;
+    public Transform pauseMenuTransform;
 
     void Start() 
     {
@@ -31,19 +31,53 @@ public class GameManager : MonoBehaviour
     {
         gameoverCanvas.SetActive(true);
         Time.timeScale = 0;
-        string playerName = playerNameInput.text;
         int currentScore = score.GetCurrentScore();
-        await CloudSaveSystem.Instance.AddNewScore(playerName, currentScore);
     }
     public void Restart() 
     {
-        score.EndGame();
         SceneManager.LoadScene(1);
     }
     public void MainMenu() 
     {
-        score.EndGame();
         SceneManager.LoadScene(0);
+    }
+    //Pausa
+    public void ShowPauseMenu()
+    {
+        pauseMenuTransform.gameObject.SetActive(true);
+
+        StartCoroutine(ShowPauseCoroutine());
+    }
+
+    private IEnumerator ShowPauseCoroutine()
+    {
+        yield return StartCoroutine(ScaleOverTime(pauseMenuTransform,Vector3.zero, Vector3.one, 0.2f));
+        Time.timeScale = 0f;
+    }
+    public void HidePauseMenu()
+    {
+        Time.timeScale = 1f;
+        StartCoroutine(HidePauseCoroutine());
+    }
+
+    private IEnumerator HidePauseCoroutine()
+    {
+        yield return StartCoroutine(ScaleOverTime(pauseMenuTransform, pauseMenuTransform.localScale, Vector3.zero, 0.2f));
+        pauseMenuTransform.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ScaleOverTime(Transform target, Vector3 from, Vector3 to, float duration)
+    {
+        float t = 0f;
+        target.localScale = from;
+        while (t < duration)
+        {
+            t += Time.unscaledDeltaTime;
+            float factor = t / duration;
+            target.localScale = Vector3.Lerp(from, to, factor);
+            yield return null;
+        }
+        target.localScale = to;
     }
 }
 
