@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 using TMPro;
 using System.Threading.Tasks;
 
@@ -13,7 +14,19 @@ public class GameManager : MonoBehaviour
     public Sprite[] shurikenSprites;
     public Transform SpawnPoint;
     public Transform pauseMenuTransform;
+    public InputActionReference pauseAction;
+    private bool isPaused;
 
+    void OnEnable() 
+    {
+        pauseAction.action.Enable();
+        pauseAction.action.performed += TogglePause;
+    }
+    void OnDisable() 
+    {
+        pauseAction.action.performed -= TogglePause;
+        pauseAction.action.Disable();
+    }
     void Start() 
     {
         Time.timeScale = 1;
@@ -42,13 +55,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     //Pausa
+    private void TogglePause(InputAction.CallbackContext context) 
+    {
+        isPaused = !isPaused;
+        if (isPaused) ShowPauseMenu();
+        else HidePauseMenu();
+    }
     public void ShowPauseMenu()
     {
         pauseMenuTransform.gameObject.SetActive(true);
-
         StartCoroutine(ShowPauseCoroutine());
     }
-
     private IEnumerator ShowPauseCoroutine()
     {
         yield return StartCoroutine(ScaleOverTime(pauseMenuTransform,Vector3.zero, Vector3.one, 0.2f));
@@ -59,13 +76,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         StartCoroutine(HidePauseCoroutine());
     }
-
     private IEnumerator HidePauseCoroutine()
     {
         yield return StartCoroutine(ScaleOverTime(pauseMenuTransform, pauseMenuTransform.localScale, Vector3.zero, 0.2f));
         pauseMenuTransform.gameObject.SetActive(false);
     }
-
     private IEnumerator ScaleOverTime(Transform target, Vector3 from, Vector3 to, float duration)
     {
         float t = 0f;
