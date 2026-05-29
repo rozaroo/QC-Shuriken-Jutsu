@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 using TMPro;
 using System.Threading.Tasks;
 
@@ -13,9 +15,13 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public Sprite[] shurikenSprites;
     public Transform SpawnPoint;
+    //Pausa
     public Transform pauseMenuTransform;
     public InputActionReference pauseAction;
     private bool isPaused;
+    public Image buttonImage;
+    public Sprite pauseSprite;
+    public Sprite resumeSprite;
 
     void OnEnable() 
     {
@@ -58,8 +64,7 @@ public class GameManager : MonoBehaviour
     private void TogglePause(InputAction.CallbackContext context) 
     {
         isPaused = !isPaused;
-        if (isPaused) ShowPauseMenu();
-        else HidePauseMenu();
+        ApplyState();
     }
     public void ShowPauseMenu()
     {
@@ -93,6 +98,28 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         target.localScale = to;
+    }
+    public void TogglePauseButton()
+    {
+        isPaused = !isPaused;
+        ApplyState();
+    }
+
+    public void ApplyState()
+    {
+        if (isPaused) Show();
+        else Hide();
+    }
+    
+    public void Show()
+    {
+        ShowPauseMenu();
+        buttonImage.sprite = resumeSprite;
+    }
+    public void Hide()
+    {
+        HidePauseMenu();
+        buttonImage.sprite = pauseSprite;
     }
 }
 

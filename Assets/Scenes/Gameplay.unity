@@ -1232,7 +1232,6 @@ GameObject:
   - component: {fileID: 770301489}
   - component: {fileID: 770301488}
   - component: {fileID: 770301487}
-  - component: {fileID: 770301490}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -1303,9 +1302,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 770301490}
-        m_TargetAssemblyTypeName: PauseButton, Assembly-CSharp
-        m_MethodName: TogglePause
+      - m_Target: {fileID: 2080660108}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: TogglePauseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1353,22 +1352,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770301485}
   m_CullTransparentMesh: 1
---- !u!114 &770301490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770301485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fad4c550c1dfb342912e97e32613e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonImage: {fileID: 770301488}
-  pauseSprite: {fileID: -7762350047352875558, guid: 74f886c48464f174d94ace2ebe70e62c, type: 3}
-  resumeSprite: {fileID: 3513128529365691483, guid: 3d832755a77fe5c4698c32328e75d6ed, type: 3}
-  gameManager: {fileID: 2080660108}
 --- !u!1 &778635574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,6 +2995,9 @@ MonoBehaviour:
   SpawnPoint: {fileID: 1828334182}
   pauseMenuTransform: {fileID: 1922747634}
   pauseAction: {fileID: -3807163979396847643, guid: 3607d64eba7be6147b1805ab79086ef5, type: 3}
+  buttonImage: {fileID: 770301488}
+  pauseSprite: {fileID: -7762350047352875558, guid: 74f886c48464f174d94ace2ebe70e62c, type: 3}
+  resumeSprite: {fileID: 3513128529365691483, guid: 3d832755a77fe5c4698c32328e75d6ed, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
