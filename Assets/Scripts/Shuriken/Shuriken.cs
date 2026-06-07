@@ -10,7 +10,6 @@ public class Shuriken : MonoBehaviour
     public InputActionReference muteJumpAction;
     public PolygonCollider2D polygonCollider;
     public ShurikenDataPrefab shurikenColliderData;
-    public AK.Wwise.Event jumpEvent;
     private bool jumpMuted;
 
     void OnEnable()
@@ -58,7 +57,7 @@ public class Shuriken : MonoBehaviour
         if (context.phase == InputActionPhase.Performed)
         {
             rb2D.linearVelocity = Vector2.up * velocity;
-            jumpEvent.Post(gameObject);
+            AkSoundEngine.PostEvent("Play_Jump", gameObject);
         }
     }
     

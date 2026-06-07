@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 74f886c48464f174d94ace2ebe70e62c
+guid: 2614dc21ec9c2ce468f8bb7d7dcc348d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7762350047352875558
-    second: Pause_0
+      213: 2502979951841687223
+    second: Boton Shuriken-Jutsu_0
+  - first:
+      213: -7136375431407790229
+    second: Boton Shuriken-Jutsu_1
+  - first:
+      213: -9178545663351830630
+    second: Boton Shuriken-Jutsu_2
+  - first:
+      213: 3067764741741633466
+    second: Boton Shuriken-Jutsu_3
+  - first:
+      213: -3641693928720723902
+    second: Boton Shuriken-Jutsu_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pause_0
+      name: Boton Shuriken-Jutsu_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 21
-        width: 452
-        height: 458
+        x: 298
+        y: 625
+        width: 278
+        height: 272
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad59b4532c7964490800000000000000
-      internalID: -7762350047352875558
+      spriteID: 7b6b27d310f5cb220800000000000000
+      internalID: 2502979951841687223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton Shuriken-Jutsu_1
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 0
+        width: 954
+        height: 765
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b671d13fa5086fc90800000000000000
+      internalID: -7136375431407790229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton Shuriken-Jutsu_2
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 354
+        width: 926
+        height: 726
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97463569514f9080800000000000000
+      internalID: -9178545663351830630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton Shuriken-Jutsu_3
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 158
+        width: 670
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf5af567c3e29a20800000000000000
+      internalID: 3067764741741633466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boton Shuriken-Jutsu_4
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 219
+        width: 278
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24097e59aaa167dc0800000000000000
+      internalID: -3641693928720723902
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Pause_0: -7762350047352875558
+      Boton Shuriken-Jutsu_0: 2502979951841687223
+      Boton Shuriken-Jutsu_1: -7136375431407790229
+      Boton Shuriken-Jutsu_2: -9178545663351830630
+      Boton Shuriken-Jutsu_3: 3067764741741633466
+      Boton Shuriken-Jutsu_4: -3641693928720723902
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

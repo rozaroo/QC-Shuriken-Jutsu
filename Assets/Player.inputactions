@@ -46,17 +46,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "49f3a8cd-a6f3-44bf-b7b3-064a344a7051",
-                    "path": "<Pointer>/press",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Touch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "a34d765e-d838-4e99-9338-4779c90e6868",
                     "path": "<Keyboard>/w",
                     "interactions": "",

@@ -14,11 +14,24 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID GAMEOVER = 4158285989U;
+        static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
     } // namespace EVENTS
 
     namespace STATES
     {
+        namespace JUMP
+        {
+            static const AkUniqueID GROUP = 3833651337U;
+
+            namespace STATE
+            {
+                static const AkUniqueID JUMPOFF = 202775352U;
+                static const AkUniqueID JUMPON = 1408207330U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace JUMP
+
         namespace MUSIC
         {
             static const AkUniqueID GROUP = 3991942870U;
