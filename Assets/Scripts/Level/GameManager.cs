@@ -1,11 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
-using TMPro;
 using System.Threading.Tasks;
 
 public class GameManager : MonoBehaviour
@@ -73,7 +70,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator ShowPauseCoroutine()
     {
-        yield return StartCoroutine(ScaleOverTime(pauseMenuTransform,Vector3.zero, Vector3.one, 0.2f));
+        yield return StartCoroutine(ScaleOverTime(pauseMenuTransform,Vector3.zero, Vector3.one, 0.0f));
         Time.timeScale = 0f;
     }
     public void HidePauseMenu()
@@ -83,7 +80,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator HidePauseCoroutine()
     {
-        yield return StartCoroutine(ScaleOverTime(pauseMenuTransform, pauseMenuTransform.localScale, Vector3.zero, 0.2f));
+        yield return StartCoroutine(ScaleOverTime(pauseMenuTransform, pauseMenuTransform.localScale, Vector3.zero, 0.1f));
         pauseMenuTransform.gameObject.SetActive(false);
     }
     private IEnumerator ScaleOverTime(Transform target, Vector3 from, Vector3 to, float duration)
@@ -120,6 +117,14 @@ public class GameManager : MonoBehaviour
     {
         HidePauseMenu();
         buttonImage.sprite = pauseSprite;
+    }
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus && !isPaused) 
+        {
+            isPaused = true;
+            ApplyState();
+        }
     }
 }
 
