@@ -1,0 +1,97 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{BB7C207C-BF7D-45E3-98E5-31BF8B89D7C6}",
+    "Language": "SFX",
+    "Hash": "{52DA7389-2F2D-7930-3B4F-35CA5AE313AC}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "184518363",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump.wav",
+      "CachePath": "35/{3538C967-BE6F-3444-F28C-087746518710}.wem"
+     },
+     {
+      "Id": "288350706",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "YEAT-VVV-x-Hollow-Purple-INSTRUMENTAL-EPIC-VERSION.wav",
+      "CachePath": "3B/{3BC7EDB1-AAC9-EF16-7867-4DECA6E18C78}.wem"
+     },
+     {
+      "Id": "915171635",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Death-Sound-Effect.wav",
+      "CachePath": "9C/{9CFFFAE7-30A5-3601-F868-6D7F6D329DD2}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "4158285989",
+      "Name": "GameOver",
+      "ObjectPath": "\\Events\\Default Work Unit\\GameOver",
+      "GUID": "{15C082E4-CED1-4071-B861-2D0EBEB720BE}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.4341043",
+      "DurationMax": "0.4341043",
+      "MediaRefs": [
+       {
+        "Id": "915171635"
+       }
+      ]
+     },
+     {
+      "Id": "3689126666",
+      "Name": "Play_Jump",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Jump",
+      "GUID": "{4EA24E85-B116-4442-B464-DA130C0E5C73}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.36571428",
+      "DurationMax": "0.36571428",
+      "MediaRefs": [
+       {
+        "Id": "184518363"
+       }
+      ]
+     },
+     {
+      "Id": "2932040671",
+      "Name": "Play_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Music",
+      "GUID": "{7834779B-2053-424E-9321-F1FE993636A7}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "288350706"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2346531308",
+      "Name": "MusicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicVolume",
+      "GUID": "{2D4092EB-B378-4A34-BEAE-3CB4A0DD4E2A}"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{DCF36523-0FB3-1C8A-7210-172A56006926}"
+ }
+}
